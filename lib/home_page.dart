@@ -1,6 +1,8 @@
 import "dart:convert";
+import 'dart:io';
 // import "package:connectivity/connectivity.dart";
 import 'package:covid_19_tracker/district_wise_cases.dart';
+import 'package:covid_19_tracker/important_functions.dart';
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:http/http.dart" as http;
@@ -20,6 +22,7 @@ class _HomePageState extends State<HomePage> {
     Colors.redAccent
   ];
   bool isData = true;
+  File covidFile;
 
   @override
   void initState() {
@@ -224,8 +227,8 @@ class _HomePageState extends State<HomePage> {
         children: [
           FloatingActionButton(
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => Jsonpt2()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Jsonpt2()));
             },
             tooltip: "Show total Increase",
             child: Icon(
@@ -253,31 +256,56 @@ class _HomePageState extends State<HomePage> {
   }
 
   void getconvertDataToJson() async {
-    String cryptourl = "https://api.covid19india.org/data.json";
+    String cryptourl = "https://data.covid19india.org/data.json";
+    covidFile = await ImportantFunctions().localFile;
+    bool filepresent = await covidFile.exists();
+    debugPrint(filepresent.toString());
 
-    var response;
+    if (filepresent == false) {
+      covidFile = File(await ImportantFunctions()
+          .localPath); //? will create a new file we don't want that
+    }
+    http.Response response;
 
     try {
-      response = await http.get(Uri.encodeFull(cryptourl),
+      response = await http.get(Uri.parse(cryptourl),
           // parameters: {},
           headers: {
             "Accept": "application/json",
             // "X-CMC_PRO_API_KEY": "36eb5338-d84d-45b6-930d-2c73544d242e",
           });
-    } catch (e) {
-      _showAlertBox(context);
-    }
-    setState(() {
       if (response.statusCode == 200) {
         convertDataToJson = json.decode(response.body);
-        isData = false;
+        print("\033[31m Response body \033[0m" + response.body);
       }
-    });
+
+      setState(() {
+        print(response.toString());
+        if (response.statusCode == 200) {
+          isData = false;
+        }
+      });
+    } catch (e) {
+      _showAlertBox(context);
+      String covidFileContents = covidFile.readAsStringSync();
+      convertDataToJson = json.decode(covidFileContents);
+      setState(() {
+        isData = false;
+      });
+    }
+    if (response != null) {
+      if (response.statusCode == 200) {
+        covidFile.writeAsString(response.body);
+        debugPrint(await covidFile.readAsString());
+        debugPrint(convertDataToJson["statewise"].toString());
+        debugPrint("successful writing the file");
+      }
+    }
+
     // Future.delayed(Duration(seconds: 2), () {
     //   if (response.statusCode != 200) {}
     // });
-    debugPrint(convertDataToJson["statewise"].toString());
-    debugPrint("successful");
+
     // isData = true;
   }
 }
@@ -290,7 +318,10 @@ void _showAlertBox(context) {
         title: Text("Unable to fetch data!"),
         content: Text("Please check your internet connection and try again."),
         actions: <Widget>[
-          TextButton(onPressed: () => SystemNavigator.pop(), child: Text("OK"))
+          TextButton(onPressed: () => SystemNavigator.pop(), child: Text("OK")),
+          TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('Show Old Data!'))
         ],
       );
     },
