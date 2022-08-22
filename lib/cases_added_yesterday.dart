@@ -722,7 +722,7 @@ class _Jsonpt2State extends State<Jsonpt2> {
                         // backgroundColor: if(),
                         child: Text("JK"),
                       ),
-                      title: Text("AJammu and Kashmir"),
+                      title: Text("Jammu and Kashmir"),
                       subtitle: RichText(
                         text: TextSpan(
                           style: Theme.of(context).textTheme.bodyText2,
@@ -1603,10 +1603,10 @@ class _Jsonpt2State extends State<Jsonpt2> {
   }
 
   void getconvertDataToJson() async {
-    String cryptourl = "https://api.covid19india.org/states_daily.json";
+    String cryptourl = "https://data.covid19india.org/states_daily.json";
     var response;
     try {
-      response = await http.get(Uri.encodeFull(cryptourl),
+      response = await http.get(Uri.parse(cryptourl),
           // parameters: {},
           headers: {
             "Accept": "application/json",
@@ -1638,7 +1638,8 @@ class _Jsonpt2State extends State<Jsonpt2> {
           content: Text("Please check your internet connection and try again."),
           actions: <Widget>[
             TextButton(
-                onPressed: () => SystemNavigator.pop(), child: Text("OK"))
+                onPressed: () => SystemNavigator.pop(), child: Text("OK")),
+                TextButton(onPressed: () => Navigator.pop(context), child: Text('Show Old Data'))
           ],
         );
       },

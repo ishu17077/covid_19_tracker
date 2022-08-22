@@ -78,8 +78,7 @@ class _District_CasesState extends State<District_Cases> {
                           color: Colors.amberAccent,
                         ),
                       ),
-                      Text(convertDataToJson["Rajasthan"]["districtData"]
-                              ["Kota"]["delta"]
+                      Text(convertDataToJson["Rajasthan"]["districtData"]["Kota"]
                           .toString()),
                     ],
                   ),
@@ -88,12 +87,12 @@ class _District_CasesState extends State<District_Cases> {
   }
 
   void getconvertDataToJson() async {
-    String cryptourl = "https://api.covid19india.org/state_district_wise.json";
+    String cryptourl = "https://data.covid19india.org/state_district_wise.json";
 
     var response;
 
     try {
-      response = await http.get(Uri.encodeFull(cryptourl),
+      response = await http.get(Uri.parse(cryptourl),
           // parameters: {},
           headers: {
             "Accept": "application/json",
@@ -111,7 +110,7 @@ class _District_CasesState extends State<District_Cases> {
     // Future.delayed(Duration(seconds: 2), () {
     //   if (response.statusCode != 200) {}
     // });
-    debugPrint(convertDataToJson["Rajasthan"].toString());
+    debugPrint(convertDataToJson["Rajasthan"]['districtData'].toString());
     debugPrint("successful");
     // isData = true;
   }
