@@ -1,5 +1,9 @@
+// ignore_for_file: camel_case_types
+
 import "dart:convert";
+import 'dart:io';
 // import "package:connectivity/connectivity.dart";
+import 'package:covid_19_tracker/important_functions.dart';
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:http/http.dart" as http;
@@ -15,6 +19,7 @@ class _District_CasesState extends State<District_Cases> {
   _District_CasesState(this.statecode);
   final String statecode;
   var convertDataToJson;
+  File districtWiseCases;
   final List<MaterialAccentColor> _colors = [
     Colors.blueAccent,
     Colors.limeAccent,
@@ -78,7 +83,8 @@ class _District_CasesState extends State<District_Cases> {
                           color: Colors.amberAccent,
                         ),
                       ),
-                      Text(convertDataToJson["Rajasthan"]["districtData"]["Kota"]
+                      Text(convertDataToJson["Rajasthan"]["districtData"]
+                              ["Kota"]
                           .toString()),
                     ],
                   ),
@@ -88,7 +94,15 @@ class _District_CasesState extends State<District_Cases> {
 
   void getconvertDataToJson() async {
     String cryptourl = "https://data.covid19india.org/state_district_wise.json";
+    districtWiseCases =
+        await ImportantFunctions().localFile('district_wise_cases.json');
+    bool filepresent = await districtWiseCases.exists();
+    debugPrint(filepresent.toString());
 
+    if (filepresent == false) {
+      districtWiseCases = File(await ImportantFunctions().localPath(
+          'district_wise_cases.json')); //? will create a new file everytime, we don't want that
+    }
     var response;
 
     try {
@@ -98,35 +112,58 @@ class _District_CasesState extends State<District_Cases> {
             "Accept": "application/json",
             // "X-CMC_PRO_API_KEY": "36eb5338-d84d-45b6-930d-2c73544d242e",
           });
+      setState(() {
+        if (response.statusCode == 200) {
+          convertDataToJson = json.decode(response.body);
+          isData = false;
+        }
+      });
     } catch (e) {
       _showAlertBox(context);
     }
-    setState(() {
-      if (response.statusCode == 200) {
-        convertDataToJson = json.decode(response.body);
-        isData = false;
-      }
-    });
+
     // Future.delayed(Duration(seconds: 2), () {
     //   if (response.statusCode != 200) {}
     // });
-    debugPrint(convertDataToJson["Rajasthan"]['districtData'].toString());
-    debugPrint("successful");
+    if (response != null) {
+      if (response.statusCode == 200) {
+        districtWiseCases.writeAsString(response.body); //? Writing to the file.
+        debugPrint(await districtWiseCases.readAsString());
+        debugPrint(convertDataToJson["Rajasthan"]['districtData'].toString());
+        debugPrint("successful writing the file");
+      }
+    }
+
     // isData = true;
   }
-}
 
-void _showAlertBox(context) {
-  showDialog(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        title: Text("Unable to fetch data!"),
-        content: Text("Please check your internet connection and try again."),
-        actions: <Widget>[
-          TextButton(onPressed: () => SystemNavigator.pop(), child: Text("OK"))
-        ],
-      );
-    },
-  );
+  void _showOldData() async {
+    String covidFileContents = districtWiseCases.readAsStringSync();
+    convertDataToJson = json.decode(covidFileContents);
+    setState(() {
+      isData = false;
+    });
+  }
+
+  void _showAlertBox(context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Unable to fetch data!"),
+          content: Text("Please check your internet connection and try again."),
+          actions: <Widget>[
+            TextButton(
+                onPressed: () => SystemNavigator.pop(), child: Text("OK")),
+            TextButton(
+                onPressed: () {
+                  _showOldData();
+                  Navigator.pop(context);
+                },
+                child: Text('Show Old Data'))
+          ],
+        );
+      },
+    );
+  }
 }

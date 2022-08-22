@@ -6,6 +6,7 @@ import 'package:covid_19_tracker/important_functions.dart';
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:http/http.dart" as http;
+import 'package:page_transition/page_transition.dart';
 
 import 'cases_added_yesterday.dart';
 
@@ -72,11 +73,10 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    District_Cases(
-                                        convertDataToJson["statewise"][index]
-                                                ["statecode"]
-                                            .toString()))),
+                                builder: (context) => District_Cases(
+                                    convertDataToJson["statewise"][index]
+                                            ["statecode"]
+                                        .toString()))),
                       ),
                       title: Text(
                         convertDataToJson["statewise"][index]["state"],
@@ -226,9 +226,13 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            heroTag: 'btn1',
             onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Jsonpt2()));
+              Navigator.push(
+                context,
+                PageTransition(
+                    child: Jsonpt2(), type: PageTransitionType.leftToRight),
+              );
             },
             tooltip: "Show total Increase",
             child: Icon(
@@ -240,9 +244,13 @@ class _HomePageState extends State<HomePage> {
             width: 10,
           ),
           FloatingActionButton(
+            heroTag: 'btn2',
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => District_Cases("RJ")));
+              Navigator.push(
+                  context,
+                  PageTransition(
+                      child: District_Cases("RJ"),
+                      type: PageTransitionType.rightToLeft));
             },
             tooltip: "Show Kota Cases",
             child: Icon(
@@ -257,7 +265,14 @@ class _HomePageState extends State<HomePage> {
 
   void getconvertDataToJson() async {
     String cryptourl = "https://data.covid19india.org/data.json";
+    covidFile = await ImportantFunctions().localFile('covid_cases.json');
+    bool filepresent = await covidFile.exists();
+    debugPrint(filepresent.toString());
 
+    if (filepresent == false) {
+      covidFile = File(await ImportantFunctions().localPath(
+          'covid_cases.json')); //? will create a new file everytime, we don't want that
+    }
     http.Response response;
 
     try {
@@ -296,16 +311,7 @@ class _HomePageState extends State<HomePage> {
     // isData = true;
   }
 
-  void showOldData() async {
-    covidFile = await ImportantFunctions().localFile;
-    bool filepresent = await covidFile.exists();
-    debugPrint(filepresent.toString());
-
-    if (filepresent == false) {
-      covidFile = File(await ImportantFunctions()
-          .localPath); //? will create a new file everytime, we don't want that
-    }
-    _showAlertBox(context);
+  void _showOldData() async {
     String covidFileContents = covidFile.readAsStringSync();
     convertDataToJson = json.decode(covidFileContents);
     setState(() {
@@ -319,13 +325,14 @@ class _HomePageState extends State<HomePage> {
       builder: (context) {
         return AlertDialog(
           title: Text("Unable to fetch data!"),
-          content: Text("Please check your internet connection and try again."),
+          content:
+              Text("Please check your internet connection andj try again."),
           actions: <Widget>[
             TextButton(
                 onPressed: () => SystemNavigator.pop(), child: Text("OK")),
             TextButton(
                 onPressed: () {
-                  showOldData();
+                  _showOldData();
                   Navigator.pop(context);
                 },
                 child: Text('Show Old Data!'))

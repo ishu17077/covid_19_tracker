@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
 
 class ImportantFunctions {
-  Future<String> get localPath async {
+  Future<String> localPath(String filename) async {
     final directory = await getApplicationDocumentsDirectory();
     debugPrint('${directory.path}');
-    return '${directory.path}/covid_cases.json';
+    return '${directory.path}/$filename';
   }
 
-  Future<File> get localFile async {
+  Future<File> localFile(String filename) async {
     final path = await localPath;
-    return File('$path/covid_cases.json');
+    return File('$path/$filename');
   }
 }

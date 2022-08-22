@@ -1,5 +1,7 @@
 import "dart:convert";
+import 'dart:io';
 // import "package:connectivity/connectivity.dart";
+import 'package:covid_19_tracker/important_functions.dart';
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:http/http.dart" as http;
@@ -12,6 +14,7 @@ class Jsonpt2 extends StatefulWidget {
 class _Jsonpt2State extends State<Jsonpt2> {
   var convertDataToJson;
   bool isData = true;
+  File casesAddedYesterday;
   void initState() {
     super.initState();
     getconvertDataToJson();
@@ -1604,6 +1607,15 @@ class _Jsonpt2State extends State<Jsonpt2> {
 
   void getconvertDataToJson() async {
     String cryptourl = "https://data.covid19india.org/states_daily.json";
+    casesAddedYesterday =
+        await ImportantFunctions().localFile('cases_added_yesterday.json');
+    bool filepresent = await casesAddedYesterday.exists();
+    debugPrint(filepresent.toString());
+
+    if (filepresent == false) {
+      casesAddedYesterday = File(await ImportantFunctions().localPath(
+          'cases_added_yesterday.json')); //? will create a new file everytime, we don't want that
+    }
     var response;
     try {
       response = await http.get(Uri.parse(cryptourl),
@@ -1612,21 +1624,37 @@ class _Jsonpt2State extends State<Jsonpt2> {
             "Accept": "application/json",
             // "X-CMC_PRO_API_KEY": "36eb5338-d84d-45b6-930d-2c73544d242e",
           });
+      setState(() {
+        if (response.statusCode == 200) {
+          convertDataToJson = json.decode(response.body);
+          isData = false;
+        }
+      });
     } catch (e) {
       _showAlertBox(context);
     }
-    setState(() {
+    if (response != null) {
       if (response.statusCode == 200) {
-        convertDataToJson = json.decode(response.body);
-        isData = false;
+        casesAddedYesterday
+            .writeAsString(response.body); //? Writing to the file.
+        debugPrint(await casesAddedYesterday.readAsString());
+        debugPrint("successful writing the file");
       }
-    });
+    }
     // Future.delayed(Duration(seconds: 2), () {
     //   if (response.statusCode != 200) {}
     // });
     print(convertDataToJson.toString());
     print("successful");
     // isData = true;
+  }
+
+  void _showOldData() async {
+    String covidFileContents = casesAddedYesterday.readAsStringSync();
+    convertDataToJson = json.decode(covidFileContents);
+    setState(() {
+      isData = false;
+    });
   }
 
   void _showAlertBox(context) {
@@ -1639,7 +1667,12 @@ class _Jsonpt2State extends State<Jsonpt2> {
           actions: <Widget>[
             TextButton(
                 onPressed: () => SystemNavigator.pop(), child: Text("OK")),
-                TextButton(onPressed: () => Navigator.pop(context), child: Text('Show Old Data'))
+            TextButton(
+                onPressed: () {
+                  _showOldData();
+                  Navigator.pop(context);
+                },
+                child: Text('Show Old Data'))
           ],
         );
       },
