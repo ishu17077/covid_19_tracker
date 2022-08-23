@@ -23,7 +23,10 @@ class _Jsonpt2State extends State<Jsonpt2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor:
+            MediaQuery.of(context).platformBrightness == Brightness.light
+                ? Colors.white
+                : Colors.black,
         appBar: AppBar(
           title: Text("Cases added yesterday!"),
           actions: <Widget>[

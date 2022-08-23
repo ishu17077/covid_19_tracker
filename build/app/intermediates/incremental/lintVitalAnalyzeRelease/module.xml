@@ -1,11 +1,11 @@
 <lint-module
     format="1"
-    dir="/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app"
+    dir="/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.2.1"
-    buildFolder="/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app"
+    buildFolder="/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app"
     bootClassPath="/home/ishukumar5663/Android/Sdk/platforms/android-31/android.jar:/home/ishukumar5663/Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-31">

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-6:/values/values.xml",
+            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-merged_res-10:/values/values.xml",
             "map": [
                 {
                     "source": "/home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/res/values/values.xml",
@@ -44,7 +44,7 @@
             ]
         },
         {
-            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-merged_res-8:/values/values.xml",
+            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-8:/values/values.xml",
             "map": [
                 {
                     "source": "/home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/res/values/values.xml",

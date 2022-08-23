@@ -8,9 +8,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      darkTheme: ThemeData(
+          primarySwatch: Colors.indigo,
+          brightness: Brightness.dark,
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: Colors.white),
+          )),
       theme: ThemeData(
         primarySwatch: Colors.indigo,
-        brightness: Brightness.dark,
+        listTileTheme: ListTileThemeData(
+          tileColor: Colors.white,
+        ),
+        brightness: Brightness.light,
       ),
       debugShowCheckedModeBanner: false,
       home: HomePage(),

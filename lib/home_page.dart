@@ -33,7 +33,10 @@ class _HomePageState extends State<HomePage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor:
+          MediaQuery.of(context).platformBrightness == Brightness.light
+              ? Colors.white
+              : Colors.black,
       appBar: AppBar(
         title: Text("Covid-19 Tracker"),
         actions: <Widget>[
@@ -60,7 +63,10 @@ class _HomePageState extends State<HomePage> {
                   MaterialAccentColor color = _colors[index % _colors.length];
                   return Card(
                     elevation: 5.0,
-                    color: Colors.white12,
+                    color: MediaQuery.of(context).platformBrightness ==
+                            Brightness.dark
+                        ? Colors.white12
+                        : Colors.white,
                     child: ExpansionTile(
                       //  ListTile(
                       leading: InkWell(

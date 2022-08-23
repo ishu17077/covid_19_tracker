@@ -1,13 +1,13 @@
 <libraries>
   <library
-      name="__local_aars__:/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
-      jars="/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/flutter/release/libs.jar"
-      resolved="__local_aars__:/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
+      name="__local_aars__:/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
+      jars="/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/flutter/release/libs.jar"
+      resolved="__local_aars__:/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
   <library
-      name="/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android@@:path_provider_android::release"
-      jars="/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/.transforms/c8f7ab196c75f721579014dee6c16c70/transformed/out/jars/classes.jar"
+      name="/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android@@:path_provider_android::release"
+      jars="/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/path_provider_android/.transforms/d1f7b35f0dfa2935fe16182fc38da383/transformed/out/jars/classes.jar"
       resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
-      folder="/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/.transforms/c8f7ab196c75f721579014dee6c16c70/transformed/out"
+      folder="/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/path_provider_android/.transforms/d1f7b35f0dfa2935fe16182fc38da383/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

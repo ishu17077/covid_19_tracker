@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-6:/values-fa/values-fa.xml",
+            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-merged_res-10:/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/res/values-fa/values-fa.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-merged_res-8:/values-fa/values-fa.xml",
+            "outputFile": "io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-8:/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/res/values-fa/values-fa.xml",

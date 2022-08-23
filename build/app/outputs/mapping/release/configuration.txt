@@ -1,4 +1,4 @@
-# The proguard configuration file for the following section is /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.2.1
+# The proguard configuration file for the following section is /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.2.1
 # This is a configuration file for ProGuard.
 # http://proguard.sourceforge.net/index.html#manual/usage.html
 #
@@ -116,7 +116,7 @@
 # These classes are duplicated between android.jar and core-lambda-stubs.jar.
 -dontnote java.lang.invoke.**
 
-# End of content from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.2.1
+# End of content from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.2.1
 # The proguard configuration file for the following section is /home/ishukumar5663/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro
 # Build the ephemeral app in a module project.
 # Prevents: Warning: library class <plugin-package> depends on program class io.flutter.plugin.**
@@ -127,12 +127,12 @@
 -dontwarn android.**
 
 # End of content from /home/ishukumar5663/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro
-# The proguard configuration file for the following section is /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
+# The proguard configuration file for the following section is /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
 -keep class android.app.Application { <init>(); }
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class com.example.covid_19_tracker.MainActivity { <init>(); }
 
-# End of content from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
+# End of content from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
 # The proguard configuration file for the following section is /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/proguard.txt
 # Copyright (C) 2020 The Android Open Source Project
 #

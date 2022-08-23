@@ -36,7 +36,10 @@ class _District_CasesState extends State<District_Cases> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor:
+            MediaQuery.of(context).platformBrightness == Brightness.light
+                ? Colors.white
+                : Colors.black,
         appBar: AppBar(
           title: Text("District wise cases"),
         ),
