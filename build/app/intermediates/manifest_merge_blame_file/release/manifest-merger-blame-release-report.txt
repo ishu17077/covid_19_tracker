@@ -1,0 +1,84 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.covid_19_tracker"
+4    android:versionCode="4001"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
+11-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:22-64
+12    <!--
+13     io.flutter.app.FlutterApplication is an android.app.Application that
+14         calls FlutterMain.startInitialization(this); in its onCreate method.
+15         In most cases you can leave this as-is, but you if you want to provide
+16         additional functionality it is fine to subclass or reimplement
+17         FlutterApplication and put your custom class here.
+18    -->
+19    <application
+20        android:name="android.app.Application"
+20-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:9:9-42
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.6.0] /home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+22        android:icon="@mipmap/ic_launcher"
+22-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:11:9-43
+23        android:label="COVID-19 Tracker" >
+23-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:10:9-41
+24        <activity
+24-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:12:9-24:20
+25            android:name="com.example.covid_19_tracker.MainActivity"
+25-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:13:13-41
+26            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+26-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:17:13-163
+27            android:exported="true"
+27-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:15:13-36
+28            android:hardwareAccelerated="true"
+28-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:18:13-47
+29            android:launchMode="singleTop"
+29-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:14:13-43
+30            android:theme="@style/LaunchTheme"
+30-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:16:13-47
+31            android:windowSoftInputMode="adjustResize" >
+31-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:19:13-55
+32            <intent-filter>
+32-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:20:13-23:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:21:17-68
+33-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:21:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:22:17-76
+35-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:22:27-74
+36            </intent-filter>
+37        </activity>
+38        <!--
+39             Don't delete the meta-data below.
+40             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+41        -->
+42        <meta-data
+42-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:27:9-29:33
+43            android:name="flutterEmbedding"
+43-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:28:13-44
+44            android:value="2" />
+44-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:29:13-30
+45
+46        <uses-library
+46-->[androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+47            android:name="androidx.window.extensions"
+47-->[androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+48            android:required="false" />
+48-->[androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+49        <uses-library
+49-->[androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+50            android:name="androidx.window.sidecar"
+50-->[androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+51            android:required="false" />
+51-->[androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+52    </application>
+53
+54</manifest>

@@ -19,7 +19,7 @@ class _District_CasesState extends State<District_Cases> {
   _District_CasesState(this.statecode);
   final String statecode;
   var convertDataToJson;
-  File districtWiseCases;
+  File? districtWiseCases;
   final List<MaterialAccentColor> _colors = [
     Colors.blueAccent,
     Colors.limeAccent,
@@ -96,7 +96,7 @@ class _District_CasesState extends State<District_Cases> {
     String cryptourl = "https://data.covid19india.org/state_district_wise.json";
     districtWiseCases =
         await ImportantFunctions().localFile('district_wise_cases.json');
-    bool filepresent = await districtWiseCases.exists();
+    bool filepresent = await districtWiseCases?.exists() ?? false;
     debugPrint(filepresent.toString());
 
     if (filepresent == false) {
@@ -127,8 +127,9 @@ class _District_CasesState extends State<District_Cases> {
     // });
     if (response != null) {
       if (response.statusCode == 200) {
-        districtWiseCases.writeAsString(response.body); //? Writing to the file.
-        debugPrint(await districtWiseCases.readAsString());
+        districtWiseCases
+            ?.writeAsString(response.body); //? Writing to the file.
+        debugPrint(await districtWiseCases?.readAsString());
         debugPrint(convertDataToJson["Rajasthan"]['districtData'].toString());
         debugPrint("successful writing the file");
       }
@@ -138,20 +139,21 @@ class _District_CasesState extends State<District_Cases> {
   }
 
   void _showOldData() async {
-    String covidFileContents = districtWiseCases.readAsStringSync();
+    String covidFileContents = districtWiseCases?.readAsStringSync() ?? '';
     convertDataToJson = json.decode(covidFileContents);
     setState(() {
       isData = false;
     });
   }
 
-  void _showAlertBox(context) {
-    showDialog(
+  void _showAlertBox(context) async {
+    bool? result = await showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Text("Unable to fetch data!"),
-          content: Text("Please check your internet connection and try again."),
+          content:
+              Text("Please check your internet connection andj try again."),
           actions: <Widget>[
             TextButton(
                 onPressed: () => SystemNavigator.pop(), child: Text("OK")),
@@ -160,10 +162,13 @@ class _District_CasesState extends State<District_Cases> {
                   _showOldData();
                   Navigator.pop(context);
                 },
-                child: Text('Show Old Data'))
+                child: Text('Show Old Data!'))
           ],
         );
       },
     );
+    if (result == false || result == null) {
+      _showOldData();
+    }
   }
 }

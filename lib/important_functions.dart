@@ -11,7 +11,7 @@ class ImportantFunctions {
   }
 
   Future<File> localFile(String filename) async {
-    final path = await localPath;
+    final path = localPath;
     return File('$path/$filename');
   }
 }

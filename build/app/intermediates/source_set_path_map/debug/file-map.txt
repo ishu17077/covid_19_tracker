@@ -1,0 +1,13 @@
+com.example.covid_19_tracker.app-jetified-window-java-1.0.0-beta04-0 /home/ishukumar5663/.gradle/caches/transforms-3/01a4428b0a05d060a49077ca61318742/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.covid_19_tracker.app-jetified-annotation-experimental-1.1.0-1 /home/ishukumar5663/.gradle/caches/transforms-3/31cc5258b0ca46627f70330dc9db37a2/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.covid_19_tracker.app-jetified-window-1.0.0-beta04-2 /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/res
+com.example.covid_19_tracker.app-core-1.6.0-3 /home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/res
+com.example.covid_19_tracker.app-debug-4 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/res
+com.example.covid_19_tracker.app-main-5 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/res
+com.example.covid_19_tracker.app-pngs-6 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/generated/res/pngs/debug
+com.example.covid_19_tracker.app-resValues-7 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/generated/res/resValues/debug
+com.example.covid_19_tracker.app-rs-8 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/generated/res/rs/debug
+com.example.covid_19_tracker.app-mergeDebugResources-9 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.covid_19_tracker.app-mergeDebugResources-10 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.covid_19_tracker.app-merged_res-11 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/merged_res/debug
+com.example.covid_19_tracker.app-packaged_res-12 /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/path_provider_android/intermediates/packaged_res/debug

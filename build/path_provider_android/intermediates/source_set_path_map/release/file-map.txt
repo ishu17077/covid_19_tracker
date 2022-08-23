@@ -1,0 +1,12 @@
+io.flutter.plugins.pathprovider.path_provider_android-jetified-window-java-1.0.0-beta04-0 /home/ishukumar5663/.gradle/caches/transforms-3/01a4428b0a05d060a49077ca61318742/transformed/jetified-window-java-1.0.0-beta04/res
+io.flutter.plugins.pathprovider.path_provider_android-jetified-annotation-experimental-1.1.0-1 /home/ishukumar5663/.gradle/caches/transforms-3/31cc5258b0ca46627f70330dc9db37a2/transformed/jetified-annotation-experimental-1.1.0/res
+io.flutter.plugins.pathprovider.path_provider_android-jetified-window-1.0.0-beta04-2 /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/res
+io.flutter.plugins.pathprovider.path_provider_android-core-1.6.0-3 /home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/res
+io.flutter.plugins.pathprovider.path_provider_android-pngs-4 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/generated/res/pngs/release
+io.flutter.plugins.pathprovider.path_provider_android-resValues-5 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/generated/res/resValues/release
+io.flutter.plugins.pathprovider.path_provider_android-rs-6 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/generated/res/rs/release
+io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-7 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-8 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.flutter.plugins.pathprovider.path_provider_android-merged_res-9 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/intermediates/merged_res/release
+io.flutter.plugins.pathprovider.path_provider_android-main-10 /home/ishukumar5663/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.19/android/src/main/res
+io.flutter.plugins.pathprovider.path_provider_android-release-11 /home/ishukumar5663/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.19/android/src/release/res

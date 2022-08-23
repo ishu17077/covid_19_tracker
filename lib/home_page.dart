@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     Colors.redAccent
   ];
   bool isData = true;
-  File covidFile;
+  File? covidFile;
 
   @override
   void initState() {
@@ -266,14 +266,14 @@ class _HomePageState extends State<HomePage> {
   void getconvertDataToJson() async {
     String cryptourl = "https://data.covid19india.org/data.json";
     covidFile = await ImportantFunctions().localFile('covid_cases.json');
-    bool filepresent = await covidFile.exists();
+    bool filepresent = await covidFile?.exists() ?? false;
     debugPrint(filepresent.toString());
 
     if (filepresent == false) {
       covidFile = File(await ImportantFunctions().localPath(
           'covid_cases.json')); //? will create a new file everytime, we don't want that
     }
-    http.Response response;
+    http.Response? response;
 
     try {
       response = await http.get(Uri.parse(cryptourl),
@@ -288,7 +288,7 @@ class _HomePageState extends State<HomePage> {
 
       setState(() {
         print(response.toString());
-        if (response.statusCode == 200) {
+        if (response?.statusCode == 200) {
           isData = false;
         }
       });
@@ -297,8 +297,8 @@ class _HomePageState extends State<HomePage> {
     }
     if (response != null) {
       if (response.statusCode == 200) {
-        covidFile.writeAsString(response.body); //? Writing to the file.
-        debugPrint(await covidFile.readAsString());
+        covidFile?.writeAsString(response.body); //? Writing to the file.
+        debugPrint(await covidFile?.readAsString());
         debugPrint(convertDataToJson["statewise"].toString());
         debugPrint("successful writing the file");
       }
@@ -312,15 +312,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _showOldData() async {
-    String covidFileContents = covidFile.readAsStringSync();
+    String covidFileContents = covidFile?.readAsStringSync() ?? '';
     convertDataToJson = json.decode(covidFileContents);
     setState(() {
       isData = false;
     });
   }
 
-  void _showAlertBox(context) {
-    showDialog(
+  void _showAlertBox(context) async {
+    bool? result = await showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
@@ -340,5 +340,8 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+    if (result == false || result == null) {
+      _showOldData();
+    }
   }
 }

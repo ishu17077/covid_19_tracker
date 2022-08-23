@@ -14,7 +14,7 @@ class Jsonpt2 extends StatefulWidget {
 class _Jsonpt2State extends State<Jsonpt2> {
   var convertDataToJson;
   bool isData = true;
-  File casesAddedYesterday;
+  File? casesAddedYesterday;
   void initState() {
     super.initState();
     getconvertDataToJson();
@@ -1609,7 +1609,7 @@ class _Jsonpt2State extends State<Jsonpt2> {
     String cryptourl = "https://data.covid19india.org/states_daily.json";
     casesAddedYesterday =
         await ImportantFunctions().localFile('cases_added_yesterday.json');
-    bool filepresent = await casesAddedYesterday.exists();
+    bool? filepresent = await casesAddedYesterday?.exists();
     debugPrint(filepresent.toString());
 
     if (filepresent == false) {
@@ -1636,34 +1636,35 @@ class _Jsonpt2State extends State<Jsonpt2> {
     if (response != null) {
       if (response.statusCode == 200) {
         casesAddedYesterday
-            .writeAsString(response.body); //? Writing to the file.
-        debugPrint(await casesAddedYesterday.readAsString());
+            ?.writeAsString(response.body); //? Writing to the file.
+        // debugPrint(await casesAddedYesterday?.readAsString());
         debugPrint("successful writing the file");
       }
     }
     // Future.delayed(Duration(seconds: 2), () {
     //   if (response.statusCode != 200) {}
     // });
-    print(convertDataToJson.toString());
+    // print(convertDataToJson.toString());
     print("successful");
     // isData = true;
   }
 
   void _showOldData() async {
-    String covidFileContents = casesAddedYesterday.readAsStringSync();
+    String covidFileContents = casesAddedYesterday?.readAsStringSync() ?? '';
     convertDataToJson = json.decode(covidFileContents);
     setState(() {
       isData = false;
     });
   }
 
-  void _showAlertBox(context) {
-    showDialog(
+  void _showAlertBox(context) async {
+    bool? result = await showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Text("Unable to fetch data!"),
-          content: Text("Please check your internet connection and try again."),
+          content:
+              Text("Please check your internet connection andj try again."),
           actions: <Widget>[
             TextButton(
                 onPressed: () => SystemNavigator.pop(), child: Text("OK")),
@@ -1672,10 +1673,14 @@ class _Jsonpt2State extends State<Jsonpt2> {
                   _showOldData();
                   Navigator.pop(context);
                 },
-                child: Text('Show Old Data'))
+                child: Text('Show Old Data!'))
           ],
         );
       },
     );
+    print(result);
+    if (result == false || result == null) {
+      _showOldData();
+    }
   }
 }

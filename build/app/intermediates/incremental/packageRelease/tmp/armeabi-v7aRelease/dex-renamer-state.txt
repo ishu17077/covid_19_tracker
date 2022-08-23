@@ -1,0 +1,4 @@
+#Mon Aug 22 23:57:39 IST 2022
+base.0=/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
