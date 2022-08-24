@@ -259,25 +259,6 @@
             "outputFile": "com.example.covid_19_tracker.app-merged_res-11:/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "94",
-                        "startColumns": "4",
-                        "startOffsets": "5519",
-                        "endLines": "97",
-                        "endColumns": "12",
-                        "endOffsets": "5695"
-                    }
-                },
-                {
                     "source": "/home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/res/values/values.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,19,23,34,51",
@@ -294,6 +275,23 @@
                         "endLines": "7,8,9,10,73,116,120,234,246,254",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "289,349,401,446,4444,6787,6918,10875,11315,11624"
+                    }
+                },
+                {
+                    "source": "/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/res/values/ic_launcher_background.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "56",
+                        "endOffsets": "107"
+                    },
+                    "to": {
+                        "startLines": "13",
+                        "startColumns": "4",
+                        "startOffsets": "611",
+                        "endColumns": "56",
+                        "endOffsets": "663"
                     }
                 },
                 {
@@ -316,20 +314,22 @@
                     }
                 },
                 {
-                    "source": "/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/res/values/ic_launcher_background.xml",
+                    "source": "/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "56",
-                        "endOffsets": "107"
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
                     },
                     "to": {
-                        "startLines": "13",
+                        "startLines": "94",
                         "startColumns": "4",
-                        "startOffsets": "611",
-                        "endColumns": "56",
-                        "endOffsets": "663"
+                        "startOffsets": "5519",
+                        "endLines": "97",
+                        "endColumns": "12",
+                        "endOffsets": "5695"
                     }
                 }
             ]

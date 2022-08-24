@@ -1,4 +1,4 @@
-#Tue Aug 23 19:32:20 IST 2022
-base.0=/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Wed Aug 24 21:43:00 IST 2022
+base.0=/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

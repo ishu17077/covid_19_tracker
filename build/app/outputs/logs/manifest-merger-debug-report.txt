@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:8:5-30:19
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:8:5-30:19
 MERGED from [androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.core:core:1.6.0] /home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
@@ -10,14 +10,14 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ishuk
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] /home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:name
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
-MERGED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
-MERGED from [:path_provider_android] /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
+MERGED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
+MERGED from [:path_provider_android] /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/01a4428b0a05d060a49077ca61318742/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/ishukumar5663/.gradle/caches/transforms-3/310f769a277c80f9c09b5b4659ad69b4/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -35,36 +35,36 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/ishukumar5663/.gradle/
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/ishukumar5663/.gradle/caches/transforms-3/a4990febea5baf53d4a39da9bd881cf0/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/ishukumar5663/.gradle/caches/transforms-3/fe7b4fd781109ccd84850d489a45ea18/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/ishukumar5663/.gradle/caches/transforms-3/31cc5258b0ca46627f70330dc9db37a2/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml:1:1-6:12
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml:1:1-6:12
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml:1:1-6:12
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml:1:1-6:12
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml:1:1-6:12
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml:1:1-6:12
 	package
-		ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:2:5-43
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
-		ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:2:5-43
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
+		ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:2:5-43
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:2:5-43
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
-		ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
-		ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
-MERGED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
-MERGED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
+ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
+MERGED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
+MERGED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
 	android:name
-		ADDED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:22-64
+		ADDED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:22-64
 uses-sdk
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
-MERGED from [:path_provider_android] /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:path_provider_android] /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+MERGED from [:path_provider_android] /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/01a4428b0a05d060a49077ca61318742/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/01a4428b0a05d060a49077ca61318742/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
@@ -99,14 +99,14 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/ishukumar5663/.
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/ishukumar5663/.gradle/caches/transforms-3/fe7b4fd781109ccd84850d489a45ea18/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/ishukumar5663/.gradle/caches/transforms-3/31cc5258b0ca46627f70330dc9db37a2/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/ishukumar5663/.gradle/caches/transforms-3/31cc5258b0ca46627f70330dc9db37a2/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
-INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
-		INJECTED from /media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/AndroidManifest.xml
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
 	android:required

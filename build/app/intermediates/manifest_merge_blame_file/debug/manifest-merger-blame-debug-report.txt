@@ -2,7 +2,7 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.example.covid_19_tracker"
 4    android:versionCode="1"
-5    android:versionName="3.0.0" >
+5    android:versionName="1.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
@@ -12,8 +12,8 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
-14-->/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:22-64
+14-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:5-66
+14-->/home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/AndroidManifest.xml:31:22-64
 15    <!--
 16     io.flutter.app.FlutterApplication is an android.app.Application that
 17         calls FlutterMain.startInitialization(this); in its onCreate method.

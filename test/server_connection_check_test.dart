@@ -24,7 +24,7 @@ void main() {
     expectLater(response.statusCode, 200);
   });
   test(
-      'Checking for server status and getying a dynamic JSON for home_page.dart',
+      'Checking for server status and getting a dynamic JSON for home_page.dart',
       () async {
     http.Response response =
         await http.get(Uri.parse(cryptoURLHomePage), headers: {
@@ -38,9 +38,7 @@ void main() {
     print(jsonFormat.toString());
     expect(jsonFormat['statewise'], isNotNull);
   });
-  test(
-      'Checking for server status and getying a dynamic JSON for cases_added_yesterday.dart',
-      () async {
+  test('Getting a JSON for cases_added_yesterday.dart', () async {
     http.Response response =
         await http.get(Uri.parse(cryptoURLCasesAddedYesterday), headers: {
       "Accept": "application/json",
@@ -53,9 +51,7 @@ void main() {
     print(jsonFormat.toString());
     expect(jsonFormat['states_daily'], isNotNull);
   });
-  test(
-      'Checking for server status and getying a dynamic JSON for district_wise_cases.dart',
-      () async {
+  test('Getting a dynamic JSON for district_wise_cases.dart', () async {
     http.Response response =
         await http.get(Uri.parse(cryptoURLDistrictWiseCases), headers: {
       "Accept": "application/json",
