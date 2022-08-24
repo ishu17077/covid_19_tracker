@@ -8,15 +8,17 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:http/http.dart" as http;
 
-class District_Cases extends StatefulWidget {
+class DistrictCases extends StatefulWidget {
+  static String cryptoUrlDistrictCases =
+      'https://data.covid19india.org/state_district_wise.json';
   final String statecode;
-  District_Cases(this.statecode);
+  DistrictCases(this.statecode);
   @override
-  _District_CasesState createState() => _District_CasesState(statecode);
+  _DistrictCasesState createState() => _DistrictCasesState(statecode);
 }
 
-class _District_CasesState extends State<District_Cases> {
-  _District_CasesState(this.statecode);
+class _DistrictCasesState extends State<DistrictCases> {
+  _DistrictCasesState(this.statecode);
   final String statecode;
   var convertDataToJson;
   File? districtWiseCases;
@@ -96,14 +98,15 @@ class _District_CasesState extends State<District_Cases> {
   }
 
   void getconvertDataToJson() async {
-    String cryptourl = "https://data.covid19india.org/state_district_wise.json";
+    String cryptourl = DistrictCases.cryptoUrlDistrictCases;
+    var importantFunctions = ImportantFunctions();
     districtWiseCases =
-        await ImportantFunctions().localFile('district_wise_cases.json');
+        await importantFunctions.localFile('district_wise_cases.json');
     bool filepresent = await districtWiseCases?.exists() ?? false;
     debugPrint(filepresent.toString());
 
     if (filepresent == false) {
-      districtWiseCases = File(await ImportantFunctions().localPath(
+      districtWiseCases = File(await importantFunctions.localPath(
           'district_wise_cases.json')); //? will create a new file everytime, we don't want that
     }
     var response;
@@ -113,7 +116,6 @@ class _District_CasesState extends State<District_Cases> {
           // parameters: {},
           headers: {
             "Accept": "application/json",
-            // "X-CMC_PRO_API_KEY": "36eb5338-d84d-45b6-930d-2c73544d242e",
           });
       setState(() {
         if (response.statusCode == 200) {

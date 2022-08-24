@@ -11,6 +11,7 @@ import 'package:page_transition/page_transition.dart';
 import 'cases_added_yesterday.dart';
 
 class HomePage extends StatefulWidget {
+  static String cryptourlHomePage = 'https://data.covid19india.org/data.json';
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => District_Cases(
+                                builder: (context) => DistrictCases(
                                     convertDataToJson["statewise"][index]
                                             ["statecode"]
                                         .toString()))),
@@ -237,7 +238,8 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 PageTransition(
-                    child: Jsonpt2(), type: PageTransitionType.leftToRight),
+                    child: CasesAddedYesterday(),
+                    type: PageTransitionType.leftToRight),
               );
             },
             tooltip: "Show total Increase",
@@ -255,7 +257,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                   context,
                   PageTransition(
-                      child: District_Cases("RJ"),
+                      child: DistrictCases("RJ"),
                       type: PageTransitionType.rightToLeft));
             },
             tooltip: "Show Kota Cases",
@@ -270,13 +272,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   void getconvertDataToJson() async {
-    String cryptourl = "https://data.covid19india.org/data.json";
-    covidFile = await ImportantFunctions().localFile('covid_cases.json');
+    String cryptourl = HomePage.cryptourlHomePage;
+    var importantFunctions = ImportantFunctions();
+    covidFile = await importantFunctions.localFile('covid_cases.json');
     bool filepresent = await covidFile?.exists() ?? false;
     debugPrint(filepresent.toString());
 
     if (filepresent == false) {
-      covidFile = File(await ImportantFunctions().localPath(
+      covidFile = File(await importantFunctions.localPath(
           'covid_cases.json')); //? will create a new file everytime, we don't want that
     }
     http.Response? response;
@@ -286,7 +289,7 @@ class _HomePageState extends State<HomePage> {
           // parameters: {},
           headers: {
             "Accept": "application/json",
-            // "X-CMC_PRO_API_KEY": "36eb5338-d84d-45b6-930d-2c73544d242e",
+            
           });
       if (response.statusCode == 200) {
         convertDataToJson = json.decode(response.body);

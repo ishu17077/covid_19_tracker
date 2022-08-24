@@ -6,12 +6,14 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:http/http.dart" as http;
 
-class Jsonpt2 extends StatefulWidget {
+class CasesAddedYesterday extends StatefulWidget {
+  static String cryptourlCasesAddedYesterday =
+      'https://data.covid19india.org/states_daily.json';
   @override
-  _Jsonpt2State createState() => _Jsonpt2State();
+  _CasesAddedYesterdayState createState() => _CasesAddedYesterdayState();
 }
 
-class _Jsonpt2State extends State<Jsonpt2> {
+class _CasesAddedYesterdayState extends State<CasesAddedYesterday> {
   var convertDataToJson;
   bool isData = true;
   File? casesAddedYesterday;
@@ -1609,14 +1611,15 @@ class _Jsonpt2State extends State<Jsonpt2> {
   }
 
   void getconvertDataToJson() async {
-    String cryptourl = "https://data.covid19india.org/states_daily.json";
+    String cryptourl = CasesAddedYesterday.cryptourlCasesAddedYesterday;
+    var importantFunctions = ImportantFunctions();
     casesAddedYesterday =
-        await ImportantFunctions().localFile('cases_added_yesterday.json');
+        await importantFunctions.localFile('cases_added_yesterday.json');
     bool? filepresent = await casesAddedYesterday?.exists();
     debugPrint(filepresent.toString());
 
     if (filepresent == false) {
-      casesAddedYesterday = File(await ImportantFunctions().localPath(
+      casesAddedYesterday = File(await importantFunctions.localPath(
           'cases_added_yesterday.json')); //? will create a new file everytime, we don't want that
     }
     var response;
@@ -1625,7 +1628,6 @@ class _Jsonpt2State extends State<Jsonpt2> {
           // parameters: {},
           headers: {
             "Accept": "application/json",
-            // "X-CMC_PRO_API_KEY": "36eb5338-d84d-45b6-930d-2c73544d242e",
           });
       setState(() {
         if (response.statusCode == 200) {
