@@ -1,4 +1,0 @@
-#Tue Aug 23 19:19:21 IST 2022
-base.0=/media/ishukumar5663/MR_X_SSD0/AndroidStudioProjects/Sample Projects/covid_19_tracker/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
