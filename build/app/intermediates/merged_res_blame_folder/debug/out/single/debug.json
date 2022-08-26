@@ -28,12 +28,12 @@
         "source": "com.example.covid_19_tracker.app-main-5:/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.covid_19_tracker.app-main-5:/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "com.example.covid_19_tracker.app-main-5:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.covid_19_tracker.app-main-5:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.example.covid_19_tracker.app-merged_res-11:/drawable-xhdpi_ic_launcher_background.png.flat",
@@ -64,20 +64,20 @@
         "source": "com.example.covid_19_tracker.app-main-5:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.covid_19_tracker.app-main-5:/mipmap-mdpi/ic_launcher_foreground.png"
-    },
-    {
         "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.example.covid_19_tracker.app-main-5:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.covid_19_tracker.app-main-5:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.covid_19_tracker.app-main-5:/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.example.covid_19_tracker.app-merged_res-11:/drawable-mdpi_ic_launcher_background.png.flat",
         "source": "com.example.covid_19_tracker.app-pngs-6:/drawable-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.covid_19_tracker.app-main-5:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "com.example.covid_19_tracker.app-merged_res-11:/mipmap-xxhdpi_ic_launcher.png.flat",
@@ -88,12 +88,12 @@
         "source": "com.example.covid_19_tracker.app-main-5:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.example.covid_19_tracker.app-merged_res-11:/drawable_ic_launcher_round.png.flat",
-        "source": "com.example.covid_19_tracker.app-main-5:/drawable/ic_launcher_round.png"
-    },
-    {
         "merged": "com.example.covid_19_tracker.app-merged_res-11:/drawable-xxhdpi_ic_launcher_background.png.flat",
         "source": "com.example.covid_19_tracker.app-pngs-6:/drawable-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.covid_19_tracker.app-merged_res-11:/drawable_ic_launcher_round.png.flat",
+        "source": "com.example.covid_19_tracker.app-main-5:/drawable/ic_launcher_round.png"
     },
     {
         "merged": "com.example.covid_19_tracker.app-merged_res-11:/drawable_launch_background.xml.flat",
