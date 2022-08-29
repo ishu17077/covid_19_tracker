@@ -47,10 +47,10 @@ void main() {
 
     if (response.statusCode == 200) {
       print(
-          '\x1B[34mConnected successfully to: ' + cryptoURLCasesAddedYesterday);
+          '\x1B[32mConnected successfully to: ' + cryptoURLCasesAddedYesterday);
     }
     var jsonFormat = json.decode(response.body);
-    print('\x1B[32m' + jsonFormat.toString().substring(0, 200) + '...');
+    print('\x1B[34m' + jsonFormat.toString().substring(0, 200) + '...');
     expect(response.statusCode, 200);
     expect(jsonFormat['states_daily'], isNotNull);
   });
@@ -61,10 +61,10 @@ void main() {
     });
     if (response.statusCode == 200) {
       print(
-          '\x1B[34mConnected successfully to: ' + cryptoURLCasesAddedYesterday);
+          '\x1B[32mConnected successfully to: ' + cryptoURLCasesAddedYesterday);
     }
     var jsonFormat = json.decode(response.body);
-    print('\x1B[32m' + jsonFormat.toString().substring(0, 200) + '...');
+    print('\x1B[34m' + jsonFormat.toString().substring(0, 200) + '...');
     expect(response.statusCode, 200);
     expect(jsonFormat['Rajasthan'], isNotNull);
   });
