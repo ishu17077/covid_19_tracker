@@ -1628,7 +1628,7 @@ class _CasesAddedYesterdayState extends State<CasesAddedYesterday> {
                     ),
                   ),
                 )
-              : Spacer(),
+              : SizedBox(height: 0, width: 0),
         ],
       ),
     );

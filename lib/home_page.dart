@@ -251,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 )
-              : Spacer(),
+              : SizedBox(height: 0, width: 0),
         ],
       ),
       floatingActionButton: Row(
@@ -333,8 +333,9 @@ class _HomePageState extends State<HomePage> {
     if (response != null) {
       if (response.statusCode == 200) {
         covidFile?.writeAsString(response.body); //? Writing to the file.
-        debugPrint(await covidFile?.readAsString());
-        debugPrint(convertDataToJson["statewise"].toString());
+        //! debugPrint(await covidFile?.readAsString().toString().substring(0, 200));
+        debugPrint(convertDataToJson["statewise"].toString().substring(0, 200) +
+            '...');
         debugPrint("successful writing the file");
       }
     }

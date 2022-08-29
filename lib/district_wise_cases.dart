@@ -114,7 +114,7 @@ class _DistrictCasesState extends State<DistrictCases> {
                       ),
                     ),
                   )
-                : Spacer(),
+                : SizedBox(height: 0, width: 0),
           ],
         ));
   }
@@ -157,8 +157,11 @@ class _DistrictCasesState extends State<DistrictCases> {
       if (response.statusCode == 200) {
         districtWiseCases
             ?.writeAsString(response.body); //? Writing to the file.
-        debugPrint(await districtWiseCases?.readAsString());
-        debugPrint(convertDataToJson["Rajasthan"]['districtData'].toString());
+        //! debugPrint(await districtWiseCases?.readAsString().toString().substring(0, 200));
+        debugPrint(convertDataToJson["Rajasthan"]['districtData']
+                .toString()
+                .substring(0, 200) +
+            '...');
         debugPrint("successful writing the file");
       }
     }
