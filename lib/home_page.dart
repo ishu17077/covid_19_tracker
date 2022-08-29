@@ -18,11 +18,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var convertDataToJson;
+  bool isOldData = false;
   final List<MaterialAccentColor> _colors = [
     Colors.blueAccent,
     Colors.limeAccent,
     Colors.redAccent
   ];
+  bool isDialogueBoxShown = true;
   bool isData = true;
   File? covidFile;
 
@@ -51,183 +53,207 @@ class _HomePageState extends State<HomePage> {
               })
         ],
       ),
-      body: isData
-          ? Center(
-              child: CircularProgressIndicator(
-                backgroundColor: Colors.redAccent,
-              ),
-            )
-          : Container(
-              child: ListView.builder(
-                itemBuilder: (BuildContext context, int index) {
-                  // Map currency = convertDataToJson[index];
-                  MaterialAccentColor color = _colors[index % _colors.length];
-                  return Card(
-                    elevation: 5.0,
-                    color: MediaQuery.of(context).platformBrightness ==
-                            Brightness.dark
-                        ? Colors.white12
-                        : Colors.white,
-                    child: ExpansionTile(
-                      //  ListTile(
-                      leading: InkWell(
-                        child: CircleAvatar(
-                          radius: 23,
-                          backgroundColor: color,
-                          child: Text(convertDataToJson["statewise"][index]
-                              ["statecode"]),
-                        ),
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DistrictCases(
-                                    convertDataToJson["statewise"][index]
-                                            ["statecode"]
-                                        .toString()))),
-                      ),
-                      title: Text(
-                        convertDataToJson["statewise"][index]["state"],
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: RichText(
-                        text: TextSpan(
-                          style: Theme.of(context).textTheme.bodyText2,
-                          children: [
-                            WidgetSpan(
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 2.0),
-                                child:
-                                    // > 0
-                                    // ? Icon(
-                                    //     Icons.arrow_drop_up,
-                                    //     color: Colors.redAccent,
-                                    //   )
-                                    // :
-                                    Icon(
-                                  Icons.arrow_drop_up,
-                                  color: Colors.redAccent,
+      body: Stack(
+        children: [
+          isData
+              ? Center(
+                  child: CircularProgressIndicator(
+                    backgroundColor: Colors.redAccent,
+                  ),
+                )
+              : Container(
+                  child: ListView.builder(
+                    itemBuilder: (BuildContext context, int index) {
+                      // Map currency = convertDataToJson[index];
+                      MaterialAccentColor color =
+                          _colors[index % _colors.length];
+                      return Card(
+                        elevation: 5.0,
+                        color: MediaQuery.of(context).platformBrightness ==
+                                Brightness.dark
+                            ? Colors.white12
+                            : Colors.white,
+                        child: ExpansionTile(
+                          //  ListTile(
+                          leading: InkWell(
+                            child: CircleAvatar(
+                              radius: 23,
+                              backgroundColor: color,
+                              child: Text(convertDataToJson["statewise"][index]
+                                  ["statecode"]),
+                            ),
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DistrictCases(
+                                        convertDataToJson["statewise"][index]
+                                                ["statecode"]
+                                            .toString()))),
+                          ),
+                          title: Text(
+                            convertDataToJson["statewise"][index]["state"],
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: RichText(
+                            text: TextSpan(
+                              style: Theme.of(context).textTheme.bodyText2,
+                              children: [
+                                WidgetSpan(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 2.0),
+                                    child:
+                                        // > 0
+                                        // ? Icon(
+                                        //     Icons.arrow_drop_up,
+                                        //     color: Colors.redAccent,
+                                        //   )
+                                        // :
+                                        Icon(
+                                      Icons.arrow_drop_up,
+                                      color: Colors.redAccent,
+                                    ),
+                                  ),
                                 ),
+                                TextSpan(
+                                    text: ("Total Confirmed Patients: " +
+                                            convertDataToJson["statewise"]
+                                                [index]["confirmed"])
+                                        .toString(),
+                                    style: TextStyle(
+                                      color: Colors.redAccent,
+                                    )),
+                              ],
+                            ),
+                          ),
+                          //  Text(
+                          //   (convertDataToJson[index]["quote"]["USD"]["percent_change_24h"]).toString(),
+                          //   style: TextStyle(
+                          //     color: (convertDataToJson[index]["quote"]["USD"]["percent_change_24h"]) > 0? Colors.redAccent : Colors.redAccent,
+                          //   ),
+                          // ), //Use textSpan
+
+                          children: <Widget>[
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 77,
+                              ),
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                ("Active Patients: " +
+                                    (convertDataToJson["statewise"][index]
+                                            ["active"])
+                                        .toString()),
+                                style: TextStyle(
+                                  color:
+                                      // (convertDataToJson["statewise"][index]
+                                      //             ["deltadeaths"])
+                                      //         0
+                                      //     ? Colors.red
+                                      // :
+                                      Colors.redAccent,
+                                ),
+                                textScaleFactor: 1.12,
                               ),
                             ),
-                            TextSpan(
-                                text: ("Total Confirmed Patients: " +
-                                        convertDataToJson["statewise"][index]
-                                            ["confirmed"])
-                                    .toString(),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 77,
+                              ),
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                ("Recovered Patients: " +
+                                    (convertDataToJson["statewise"][index]
+                                            ["recovered"])
+                                        .toString()),
                                 style: TextStyle(
-                                  color: Colors.redAccent,
-                                )),
+                                  color:
+                                      // (convertDataToJson["statewise"][index]
+                                      //             ["deltadeaths"])
+                                      //         0
+                                      //     ? Colors.red
+                                      // :
+                                      Colors.blue,
+                                ),
+                                textScaleFactor: 1.12,
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 77,
+                              ),
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                ("Deceased Patients: " +
+                                    (convertDataToJson["statewise"][index]
+                                            ["deaths"])
+                                        .toString()),
+                                style: TextStyle(
+                                  color:
+                                      // (convertDataToJson["statewise"][index]
+                                      //             ["deltadeaths"])
+                                      //         0
+                                      //     ? Colors.red
+                                      // :
+                                      Colors.blueGrey,
+                                ),
+                                textScaleFactor: 1.12,
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 77,
+                              ),
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                ("Last Updated: " +
+                                    (convertDataToJson["statewise"][index]
+                                            ["lastupdatedtime"])
+                                        .toString()),
+                                style: TextStyle(
+                                  color:
+                                      // (convertDataToJson["statewise"][index]
+                                      //             ["deltadeaths"])
+                                      //         0
+                                      //     ? Colors.red
+                                      // :
+                                      Colors.cyan,
+                                ),
+                                textScaleFactor: 1.12,
+                              ),
+                            ),
                           ],
                         ),
+                      );
+                    },
+                    itemCount: convertDataToJson["statewise"] == null
+                        ? 0
+                        : convertDataToJson['statewise'].length - 1,
+                  ),
+                ),
+          isOldData
+              ? Align(
+                  alignment: Alignment.topRight,
+                  child: Material(
+                    elevation: 5.0,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4, vertical: 1),
+                      child: Text(
+                        "Old Data",
+                        style: TextStyle(
+                          color: Colors.blueGrey,
+                          decoration: TextDecoration.overline,
+                        ),
                       ),
-                      //  Text(
-                      //   (convertDataToJson[index]["quote"]["USD"]["percent_change_24h"]).toString(),
-                      //   style: TextStyle(
-                      //     color: (convertDataToJson[index]["quote"]["USD"]["percent_change_24h"]) > 0? Colors.redAccent : Colors.redAccent,
-                      //   ),
-                      // ), //Use textSpan
-
-                      children: <Widget>[
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 77,
-                          ),
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            ("Active Patients: " +
-                                (convertDataToJson["statewise"][index]
-                                        ["active"])
-                                    .toString()),
-                            style: TextStyle(
-                              color:
-                                  // (convertDataToJson["statewise"][index]
-                                  //             ["deltadeaths"])
-                                  //         0
-                                  //     ? Colors.red
-                                  // :
-                                  Colors.redAccent,
-                            ),
-                            textScaleFactor: 1.12,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 77,
-                          ),
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            ("Recovered Patients: " +
-                                (convertDataToJson["statewise"][index]
-                                        ["recovered"])
-                                    .toString()),
-                            style: TextStyle(
-                              color:
-                                  // (convertDataToJson["statewise"][index]
-                                  //             ["deltadeaths"])
-                                  //         0
-                                  //     ? Colors.red
-                                  // :
-                                  Colors.blue,
-                            ),
-                            textScaleFactor: 1.12,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 77,
-                          ),
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            ("Deceased Patients: " +
-                                (convertDataToJson["statewise"][index]
-                                        ["deaths"])
-                                    .toString()),
-                            style: TextStyle(
-                              color:
-                                  // (convertDataToJson["statewise"][index]
-                                  //             ["deltadeaths"])
-                                  //         0
-                                  //     ? Colors.red
-                                  // :
-                                  Colors.blueGrey,
-                            ),
-                            textScaleFactor: 1.12,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 77,
-                          ),
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            ("Last Updated: " +
-                                (convertDataToJson["statewise"][index]
-                                        ["lastupdatedtime"])
-                                    .toString()),
-                            style: TextStyle(
-                              color:
-                                  // (convertDataToJson["statewise"][index]
-                                  //             ["deltadeaths"])
-                                  //         0
-                                  //     ? Colors.red
-                                  // :
-                                  Colors.cyan,
-                            ),
-                            textScaleFactor: 1.12,
-                          ),
-                        ),
-                      ],
                     ),
-                  );
-                },
-                itemCount: convertDataToJson["statewise"] == null
-                    ? 0
-                    : convertDataToJson['statewise'].length - 1,
-              ),
-            ),
+                  ),
+                )
+              : Spacer(),
+        ],
+      ),
       floatingActionButton: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.end,
@@ -289,7 +315,6 @@ class _HomePageState extends State<HomePage> {
           // parameters: {},
           headers: {
             "Accept": "application/json",
-            
           });
       if (response.statusCode == 200) {
         convertDataToJson = json.decode(response.body);
@@ -298,6 +323,7 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         print(response.toString());
         if (response?.statusCode == 200) {
+          isOldData = false;
           isData = false;
         }
       });
@@ -324,31 +350,36 @@ class _HomePageState extends State<HomePage> {
     String covidFileContents = covidFile?.readAsStringSync() ?? '';
     convertDataToJson = json.decode(covidFileContents);
     setState(() {
+      isOldData = true;
       isData = false;
     });
   }
 
   void _showAlertBox(context) async {
-    bool? result = await showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("Unable to fetch data!"),
-          content:
-              Text("Please check your internet connection andj try again."),
-          actions: <Widget>[
-            TextButton(
-                onPressed: () => SystemNavigator.pop(), child: Text("OK")),
-            TextButton(
-                onPressed: () {
-                  _showOldData();
-                  Navigator.pop(context);
-                },
-                child: Text('Show Old Data!'))
-          ],
-        );
-      },
-    );
+    bool? result = isDialogueBoxShown
+        ? null
+        : await showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: Text("Unable to fetch data!"),
+                content: Text(
+                    "Please check your internet connection andj try again."),
+                actions: <Widget>[
+                  TextButton(
+                      onPressed: () => SystemNavigator.pop(),
+                      child: Text("OK")),
+                  TextButton(
+                      onPressed: () {
+                        _showOldData();
+                        Navigator.pop(context);
+                      },
+                      child: Text('Show Old Data!'))
+                ],
+              );
+            },
+          );
+    isDialogueBoxShown = true;
     if (result == false || result == null) {
       _showOldData();
     }

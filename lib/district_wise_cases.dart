@@ -5,7 +5,6 @@ import 'dart:io';
 // import "package:connectivity/connectivity.dart";
 import 'package:covid_19_tracker/important_functions.dart';
 import "package:flutter/material.dart";
-import "package:flutter/services.dart";
 import "package:http/http.dart" as http;
 
 class DistrictCases extends StatefulWidget {
@@ -22,15 +21,15 @@ class _DistrictCasesState extends State<DistrictCases> {
   final String statecode;
   var convertDataToJson;
   File? districtWiseCases;
-  final List<MaterialAccentColor> _colors = [
-    Colors.blueAccent,
-    Colors.limeAccent,
-    Colors.redAccent
-  ];
+  bool isOldData = false;
+  // final List<MaterialAccentColor> _colors = [
+  //   Colors.blueAccent,
+  //   Colors.limeAccent,
+  //   Colors.redAccent
+  // ];
   bool isData = true;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getconvertDataToJson();
   }
@@ -45,56 +44,79 @@ class _DistrictCasesState extends State<DistrictCases> {
         appBar: AppBar(
           title: Text("District wise cases"),
         ),
-        body: isData
-            ? Center(
-                child: CircularProgressIndicator(
-                  backgroundColor: Colors.redAccent,
-                ),
-              )
-            : Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 50.0),
-                      Text(
-                        "Kota Cases Overall",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 20,
-                        ),
+        body: Stack(
+          children: [
+            isData
+                ? Center(
+                    child: CircularProgressIndicator(
+                      backgroundColor: Colors.redAccent,
+                    ),
+                  )
+                : Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 50.0),
+                          Text(
+                            "Kota Cases Overall",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(height: 20.0),
+                          Text(convertDataToJson["Rajasthan"]["districtData"]
+                                  ["Kota"]
+                              .toString()),
+                          SizedBox(height: 20),
+                          Text(
+                            "Active Cases",
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          ),
+                          Text(convertDataToJson["Rajasthan"]["districtData"]
+                                  ["Kota"]["active"]
+                              .toString()),
+                          SizedBox(
+                            height: 60,
+                          ),
+                          Text(
+                            "Delta",
+                            style: TextStyle(
+                              color: Colors.amberAccent,
+                            ),
+                          ),
+                          Text(convertDataToJson["Rajasthan"]["districtData"]
+                                  ["Kota"]
+                              .toString()),
+                        ],
                       ),
-                      SizedBox(height: 20.0),
-                      Text(convertDataToJson["Rajasthan"]["districtData"]
-                              ["Kota"]
-                          .toString()),
-                      SizedBox(height: 20),
-                      Text(
-                        "Active Cases",
-                        style: TextStyle(
-                          color: Colors.red,
-                        ),
-                      ),
-                      Text(convertDataToJson["Rajasthan"]["districtData"]
-                              ["Kota"]["active"]
-                          .toString()),
-                      SizedBox(
-                        height: 60,
-                      ),
-                      Text(
-                        "Delta",
-                        style: TextStyle(
-                          color: Colors.amberAccent,
-                        ),
-                      ),
-                      Text(convertDataToJson["Rajasthan"]["districtData"]
-                              ["Kota"]
-                          .toString()),
-                    ],
+                    ),
                   ),
-                ),
-              ));
+            isOldData
+                ? Align(
+                    alignment: Alignment.topRight,
+                    child: Material(
+                      elevation: 5.0,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 4, vertical: 1),
+                        child: Text(
+                          "Old Data",
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                            decoration: TextDecoration.overline,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                : Spacer(),
+          ],
+        ));
   }
 
   void getconvertDataToJson() async {
@@ -119,12 +141,13 @@ class _DistrictCasesState extends State<DistrictCases> {
           });
       setState(() {
         if (response.statusCode == 200) {
+          isOldData = false;
           convertDataToJson = json.decode(response.body);
           isData = false;
         }
       });
     } catch (e) {
-      _showAlertBox(context);
+      _showOldData();
     }
 
     // Future.delayed(Duration(seconds: 2), () {
@@ -148,32 +171,7 @@ class _DistrictCasesState extends State<DistrictCases> {
     convertDataToJson = json.decode(covidFileContents);
     setState(() {
       isData = false;
+      isOldData = true;
     });
-  }
-
-  void _showAlertBox(context) async {
-    bool? result = await showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("Unable to fetch data!"),
-          content:
-              Text("Please check your internet connection andj try again."),
-          actions: <Widget>[
-            TextButton(
-                onPressed: () => SystemNavigator.pop(), child: Text("OK")),
-            TextButton(
-                onPressed: () {
-                  _showOldData();
-                  Navigator.pop(context);
-                },
-                child: Text('Show Old Data!'))
-          ],
-        );
-      },
-    );
-    if (result == false || result == null) {
-      _showOldData();
-    }
   }
 }
