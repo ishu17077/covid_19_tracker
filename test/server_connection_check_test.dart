@@ -20,7 +20,7 @@ void main() {
       Uri.parse('https://www.google.com'),
       headers: {"Accept": "application/json"},
     );
-    print(response.body);
+    print("\x1B[32mInternet is phenomenal ;)");
     expectLater(response.statusCode, 200);
   });
   test(
@@ -32,10 +32,11 @@ void main() {
     });
 
     if (response.statusCode == 200) {
-      print('Connected successfully to: ' + cryptoURLHomePage);
+      print('\x1B[32mConnected successfully to: ' + cryptoURLHomePage);
     }
     var jsonFormat = json.decode(response.body);
-    print(jsonFormat.toString());
+    print('\x1B[34m' + jsonFormat.toString().substring(0, 200) + '...');
+    expect(response.statusCode, 200);
     expect(jsonFormat['statewise'], isNotNull);
   });
   test('Getting a JSON for cases_added_yesterday.dart', () async {
@@ -45,10 +46,12 @@ void main() {
     });
 
     if (response.statusCode == 200) {
-      print('Connected successfully to: ' + cryptoURLCasesAddedYesterday);
+      print(
+          '\x1B[34mConnected successfully to: ' + cryptoURLCasesAddedYesterday);
     }
     var jsonFormat = json.decode(response.body);
-    print(jsonFormat.toString());
+    print('\x1B[32m' + jsonFormat.toString().substring(0, 200) + '...');
+    expect(response.statusCode, 200);
     expect(jsonFormat['states_daily'], isNotNull);
   });
   test('Getting a dynamic JSON for district_wise_cases.dart', () async {
@@ -57,10 +60,12 @@ void main() {
       "Accept": "application/json",
     });
     if (response.statusCode == 200) {
-      print('Connected successfully to: ' + cryptoURLCasesAddedYesterday);
+      print(
+          '\x1B[34mConnected successfully to: ' + cryptoURLCasesAddedYesterday);
     }
     var jsonFormat = json.decode(response.body);
-    print(jsonFormat.toString());
+    print('\x1B[32m' + jsonFormat.toString().substring(0, 200) + '...');
+    expect(response.statusCode, 200);
     expect(jsonFormat['Rajasthan'], isNotNull);
   });
 }
