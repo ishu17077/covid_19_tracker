@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     Colors.limeAccent,
     Colors.redAccent
   ];
-  bool isDialogueBoxShown = true;
+  bool isDialogueBoxShown = false;
   bool isData = true;
   File? covidFile;
 
@@ -245,7 +245,6 @@ class _HomePageState extends State<HomePage> {
                         "Old Data",
                         style: TextStyle(
                           color: Colors.blueGrey,
-                          decoration: TextDecoration.overline,
                         ),
                       ),
                     ),
