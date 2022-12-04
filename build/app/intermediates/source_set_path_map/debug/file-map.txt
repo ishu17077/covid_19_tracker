@@ -1,7 +1,7 @@
-com.example.covid_19_tracker.app-jetified-window-java-1.0.0-beta04-0 /home/ishukumar5663/.gradle/caches/transforms-3/01a4428b0a05d060a49077ca61318742/transformed/jetified-window-java-1.0.0-beta04/res
-com.example.covid_19_tracker.app-jetified-annotation-experimental-1.1.0-1 /home/ishukumar5663/.gradle/caches/transforms-3/31cc5258b0ca46627f70330dc9db37a2/transformed/jetified-annotation-experimental-1.1.0/res
-com.example.covid_19_tracker.app-jetified-window-1.0.0-beta04-2 /home/ishukumar5663/.gradle/caches/transforms-3/c93e7449989778e540d5e53ed7283c47/transformed/jetified-window-1.0.0-beta04/res
-com.example.covid_19_tracker.app-core-1.6.0-3 /home/ishukumar5663/.gradle/caches/transforms-3/e81a46ce724630cf8c3f5fda3ef39b62/transformed/core-1.6.0/res
+com.example.covid_19_tracker.app-core-1.6.0-0 /home/ishukumar5663/.gradle/caches/transforms-3/99a4d03419778a8883f10e81f1095515/transformed/core-1.6.0/res
+com.example.covid_19_tracker.app-jetified-window-java-1.0.0-beta04-1 /home/ishukumar5663/.gradle/caches/transforms-3/9e9cc867834463b5732e7c41a22aca9f/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.covid_19_tracker.app-jetified-window-1.0.0-beta04-2 /home/ishukumar5663/.gradle/caches/transforms-3/d3cd16683f784d1c00afbf94c453a7e2/transformed/jetified-window-1.0.0-beta04/res
+com.example.covid_19_tracker.app-jetified-annotation-experimental-1.1.0-3 /home/ishukumar5663/.gradle/caches/transforms-3/e453f7bf1de35bebe09f8d7dbd9ad75e/transformed/jetified-annotation-experimental-1.1.0/res
 com.example.covid_19_tracker.app-debug-4 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/debug/res
 com.example.covid_19_tracker.app-main-5 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/android/app/src/main/res
 com.example.covid_19_tracker.app-pngs-6 /home/ishukumar5663/AndroidStudioProjects/covid_19_tracker/build/app/generated/res/pngs/debug
